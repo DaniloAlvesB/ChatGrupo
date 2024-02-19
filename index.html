@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Grupo Oportunidade</title>
+</head>
+
+<link rel="stylesheet" href="./static/css/style.css">
+<link rel="stylesheet" href="./static/css/animation.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary p-3">
+        <div class="container-fluid d-flex flex-row">
+            <a class="navbar-brand" href="#">Central de atendimentos</a>
+            <div class="col-0 col-md-7"></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#whatsapp">WhatsApp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#navegador">Navegador</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#antigo">Legado</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main_content" class="py-2">
+        <div class="d-flex flex-row justify-content-center p-2">
+            <img id="logo" class="aparecer" src="./static/images/logo_grupo.png" alt="Logo Grupo Oportunidade">
+        </div>
+
+        <!-- AVISOS -->
+        <div class="modal show" id="ModalScrollable" tabindex="-1" aria-labelledby="ModalScrollableTitle" style="display: block;" aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="ModalScrollableTitle">AVISOS</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="demiss_modal()"></button>
+                </div>
+                <div id="avisos" class="modal-body">
+                    <b>
+                        Horário especial de atendimento do suporte devido ao recesso de carnaval
+                    </b>
+                    
+                    <br><br>
+
+                    <p class="text-danger">*Os demais setores não irão funcionar.</p>
+
+                    Dos dias 07/02 à 16/02 de segunda a sexta-feira o horário de atendimento será das 8h às 12h e das 14h às 18h.
+                    E no dia 10/02/2023 o horário será das 8h às 12h.
+
+                    <br><br>
+
+                    No dia 13/02 não haverá expediente devido ao feriado.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" onclick="demiss_modal()">Fechar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- WHATSAPP -->
+        <div id="whatsapp" class="container boxshadow1 d-flex flex-wrap bg-light rounded-4 p-4 my-4">
+
+            <div class="d-flex flex-column align-items-center col gap-3 text-center">
+
+                <h5>Chame pelo whatsapp!</h5>
+
+                <div class="d-flex flex-row align-items-center gap-2">
+                    <img src="./static/images/icon_whatsapp.png" alt="Ícone do whatsapp" style="width: 30px; height: 30px;">
+                    <a class="btn btn-success" href="https://api.whatsapp.com/send?phone=5516997390524&text=Ol%C3%A1!" target="_blank">Enviar mensagem</a>
+                </div>
+
+                <div>
+                    <p class="m-0">Caso queira você também pode chamar pelo número: <a href="tel:+5516997390524">+55 (16) 99739-0524</a></p>
+                    <div class="alert alert-warning my-2" role="alert">
+                        Não atendemos ligações, apenas mensagens pelo WhatsApp
+                    </div>
+                    <p>Você será atendido por um Chat Bot que coletará informações e te encaminhará para o setor selcionado!</p>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <!-- NAVEGADOR -->
+        <div id="navegador" class="container boxshadow1 d-flex flex-wrap bg-light rounded-4 p-4 my-4 my-2">
+
+            <div class="d-flex flex-column align-items-center col gap-3 text-center">
+
+                <h5>Entrar em contato por este navegador</h5>
+
+                <button href="#" class="btn btn-primary" disabled>Iniciar conversa</button>
+                <p class="text-danger">*Desativado no momento</p>
+
+                <p>Inicie uma conversa com um de nosso atendentes por este navegador. Você será atendido por um Chat Bot que coletará informações e te encaminhará para o setor selcionado!</p>
+
+            </div>
+
+        </div>
+
+        <!-- ANTIGO -->
+        <div id="antigo" class="container boxshadow1 d-flex flex-wrap bg-light rounded-4 p-4 my-4 my-2">
+
+            <div class="d-flex flex-column align-items-center col gap-3 text-center">
+
+                <h5>Entrar em contato pelo método mais antigo</h5>
+
+                <div class="d-flex flex-column justify-content-center align-items-center gap-1 py-2 col-12">
+                    <b>Suporte técnico e pedagógico</b>
+                    <iframe style="width: 100px; height: 20px;" src="http://onbyte.mysuite1.com.br/empresas/oby/verifica_suporte.php" frameborder="no"></iframe>
+
+                    <a class="collapse_item rounded-3 alert alert-warning p-3 my-2 d-flex flex-row align-items-center justify-content-between col-12" data-bs-toggle="collapse" href="#collapseSuporte" role="button" aria-expanded="false" aria-controls="collapseSuporte">
+                        Mais informações
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                        </svg>
+                    </a>
+
+                    <div class="collapse col-12" id="collapseSuporte">
+                        <div class="alert alert-primary my-2" role="alert">
+                            Este canal pode ser acessado para dúvidas e problemas relacionados ao sistema ou às aulas.
+                            <br><br>
+                            <b>Horário de funcionamento:</b>
+                            <p class="m-0">Segunda-feira à sexta-feira: <b>8h às 20h</b></p>
+                            <p>Sábado: <b>8h às 14h</b></p>
+                        </div>
+                    </div>
+                      
+                </div>
+                
+                <div class="d-flex flex-column justify-content-center align-items-center gap-1 py-2 col-12">
+                    <b>Pedidos de produtos / apostilas</b>
+                    <iframe style="width: 100px; height: 20px;" src="http://onbyte.mysuite1.com.br/empresas/oby/verifica_pedidos.php" frameborder="no"></iframe>
+
+                    <a class="collapse_item rounded-3 alert alert-warning p-3 my-2 d-flex flex-row align-items-center justify-content-between col-12" data-bs-toggle="collapse" href="#collapsePedidos" role="button" aria-expanded="false" aria-controls="collapsePedidos">
+                        Mais informações
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                        </svg>
+                    </a>
+
+                    <div class="collapse col-12" id="collapsePedidos">
+                        <div class="alert alert-primary my-2" role="alert">
+                            Neste canal você pode realizar pedidos de apostilas e tirar dúvidas relacionadas às apostilas e outros produtos.
+                            <br><br>
+                            <b>Horário de funcionamento:</b>
+                            <p class="m-0">Segunda-feira à quinta-feira: <b>8h às 12h - 14h às 18h</b></p>
+                            <p>Sexta-feira: <b>8h às 12h - 14h às 17h</b></p>
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column justify-content-center align-items-center gap-1 py-2 col-12">
+                    <b>Negociações (dívidas e boletos em aberto)</b>
+                    <iframe style="width: 100px; height: 20px;" src="http://onbyte.mysuite1.com.br/empresas/oby/verifica_negociacoes.php" frameborder="no"></iframe>
+
+                    <a class="collapse_item rounded-3 alert alert-warning p-3 my-2 d-flex flex-row align-items-center justify-content-between col-12" data-bs-toggle="collapse" href="#collapseFinanciero" role="button" aria-expanded="false" aria-controls="collapseFinanciero">
+                        Mais informações
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                        </svg>
+                    </a>
+
+                    <div class="collapse col-12" id="collapseFinanciero">
+                        <div class="alert alert-primary my-2" role="alert">
+                            Por este canal você pode tirar dúvidas financeiras, adquirir boletos para pagamento etc.
+                            <br><br>
+                            <b>Horário de funcionamento:</b>
+                            <p class="m-0">Segunda-feira à quinta-feira: <b>9h às 12h - 13h às 18h</b></p>
+                            <p>Sexta-feira: <b>9h às 12h - 13h às 17h</b></p>
+                        </div>  
+                    </div>
+                </div>
+
+                <p>Inicie uma conversa com um de nosso atendentes por este navegador.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#whatsapp" class="nav-link px-2 text-body-secondary">WhatsApp</a></li>
+                <li class="nav-item"><a href="#navegador" class="nav-link px-2 text-body-secondary">Navegador</a></li>
+                <li class="nav-item"><a href="#antigo" class="nav-link px-2 text-body-secondary">Legado</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">© 2024 Grupo Oportunidade</p>
+        </footer>
+    </div>
+
+</body>
+
+<script>
+
+    var modal = document.getElementById('ModalScrollable')
+    var avisos = document.getElementById('avisos').innerText
+
+    if(avisos == ``){
+        modal.parentNode.removeChild(modal)
+    }
+
+    function demiss_modal(){
+        modal.parentNode.removeChild(modal)
+    }
+
+    modal.style.height = '100vh'
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</html>
