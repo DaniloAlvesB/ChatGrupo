@@ -62,3 +62,20 @@
     color: black;
     text-decoration: none;
 }
+
+#chatdiv {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+#chatbtn {
+    background-color: green;
+    width: fit-content;
+    height: 45px;
+    transition: .25s;
+}
+#chatbtn:hover {
+    filter: brightness(1.25);
+    transform: scale(1.05);
+} 
